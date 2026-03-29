@@ -19,7 +19,7 @@ import mlflow
 mlflow.set_tracking_uri("http://localhost:5000")
 mlflow.set_experiment("Tourism_Package_Prediction")
 
-api = HfApi()
+api = HfApi(token=os.getenv("HF_TOKEN"))
 
 # Step 1: Load train and test data from Hugging Face data space
 Xtrain_path = "hf://datasets/samuelrego/mlops_dataset/Xtrain.csv"
